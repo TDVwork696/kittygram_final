@@ -13,7 +13,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', ['158.160.76.134', '127.0.0.1', 'localhost', 'kittygramtdvwork.serveirc.com']).split(' ')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' '), ['158.160.76.134', '127.0.0.1', 'localhost', 'kittygramtdvwork.serveirc.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
