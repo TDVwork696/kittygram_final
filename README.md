@@ -1,26 +1,44 @@
-#  Как работать с репозиторием финального задания
+# Проект «kittygram_final»
 
-## Что нужно сделать
+## О проекте:
+Проект kittygram_final позволяет пользователям выкладывать фото своих котиков с указанием его имени, даты рождения(год), цвета окраса и его достежения.
 
-Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
+## Инструкция для развёртывания проекта:
 
-## Как проверить работу с помощью автотестов
+### Первый вариант:
 
-В корне репозитория создайте файл tests.yml со следующим содержимым:
-```yaml
-repo_owner: ваш_логин_на_гитхабе
-kittygram_domain: полная ссылка (https://доменное_имя) на ваш проект Kittygram
-taski_domain: полная ссылка (https://доменное_имя) на ваш проект Taski
-dockerhub_username: ваш_логин_на_докерхабе
-```
+- Создать на боевом сервере пустой файл  docker-compose.production.yml
+- С помощью редактора nano добавьте в него содержимое из локального docker-compose.production.yml 
 
-Скопируйте содержимое файла `.github/workflows/main.yml` в файл `kittygram_workflow.yml` в корневой директории проекта.
+### Второй вариант:
+#### С помощью утилиты SCP скопировать файл между компьютерами:
+- scp -i path_to_SSH/SSH_name docker-compose.production.yml \
+    username@server_ip:/home/username/taski/docker-compose.production.yml
 
-Для локального запуска тестов создайте виртуальное окружение, установите в него зависимости из backend/requirements.txt и запустите в корневой директории проекта `pytest`.
+## Отличие docker-compose.yml от docker-compose.production.yml:
+docker-compose.yml написан так, что образы билдятся при каждом запуске. Это удобно в процессе отладки, но в продакшене удобнее запускать контейнеры из готовых образов. Поэтому docker-compose.production.yml используеться на боевых серверах, а docker-compose.yml для отладки
 
-## Чек-лист для проверки перед отправкой задания
+## В проекте используются переменные окружения, чтобы использовать их ознакомтесь с файлом:
+example.env
 
-- Проект Taski доступен по доменному имени, указанному в `tests.yml`.
-- Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
-- Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
-- В корне проекта есть файл `kittygram_workflow.yml`.
+## Доступные endpiont:
+### - Регистрация нового пользователя:
+https://kittygramtdvwork.serveirc.com/signup
+
+### - Вход в систему:
+https://kittygramtdvwork.serveirc.com/signin
+
+### - Главная страница:
+https://kittygramtdvwork.serveirc.com/
+
+### - Добавление нового котика:
+https://kittygramtdvwork.serveirc.com/cats/add
+
+## Использованные технологии:
+- Язык програмирования - Python 3.9.10
+- Фреймворк DRF
+- СУБД - postgresql
+- Docker
+
+## Об авторах:
+https://github.com/TDVwork696
