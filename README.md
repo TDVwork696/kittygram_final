@@ -43,5 +43,5 @@ https://kittygramtdvwork.serveirc.com/cats/add
 ## Об авторах:
 https://github.com/TDVwork696
 
-![example workflow](https://https://github.com/TDVwork696/kittygram_final/actions)
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml)
 
