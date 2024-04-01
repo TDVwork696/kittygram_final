@@ -1,5 +1,7 @@
 # Проект «kittygram_final»
 
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+
 ## О проекте:
 Проект kittygram_final позволяет пользователям выкладывать фото своих котиков с указанием его имени, даты рождения(год), цвета окраса и его достежения.
 
@@ -42,6 +44,3 @@ https://kittygramtdvwork.serveirc.com/cats/add
 
 ## Об авторах:
 https://github.com/TDVwork696
-
-![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
-
